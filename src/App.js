@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AccountKit from 'react-facebook-account-kit';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <AccountKit
+          appId="897877397220204" // Update this!
+          version="v1.1" // Version must be in form v{major}.{minor}
+          onResponse={(resp) => console.log(resp)}
+          csrf={'csrf token here!'} // Required for security
+          countryCode={'+55'} // eg. +60
+          phoneNumber={'11944497711'} 
+          language={'pt_BR'}
+          
+        >
+          {p => <button {...p}>Initialize Account Kit</button>}
+        </AccountKit>
       </div>
     );
   }
