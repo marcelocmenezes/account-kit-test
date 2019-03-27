@@ -19,7 +19,7 @@ class App extends Component {
         <AccountKit
           appId="897877397220204" // Update this!
           version="v1.1" // Version must be in form v{major}.{minor}
-          onResponse={(resp) => {if(resp.status === 'PARTIALLY_AUTHENTICATED') this.setState({isLogged: true})}}
+          onResponse={(resp) => { console.log(resp) }}// if(resp.status === 'PARTIALLY_AUTHENTICATED') this.setState({isLogged: true})}}
           csrf={'Marcelo'} // Required for security
           countryCode={'+55'} // eg. +60
           phoneNumber={'11944497711'} 
